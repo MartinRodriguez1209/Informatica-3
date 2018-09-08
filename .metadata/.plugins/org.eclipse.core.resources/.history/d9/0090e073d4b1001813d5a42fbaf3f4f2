@@ -1,0 +1,15 @@
+package ejercicio4;
+
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Ingrese una frase.");
+		String frase=scan.nextLine();
+		frase=frase.replaceAll("\\s+","");
+		System.out.println(frase);
+	}
+
+}

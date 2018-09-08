@@ -1,0 +1,35 @@
+package ejercicio4;
+
+import java.text.Normalizer;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) throws Exception {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Ingrese una frase.");
+		String frase = scan.nextLine();
+		if (isPalindromo(frase) == true) {
+			System.out.println("La frase es un palindromo");
+		} else {
+			System.out.println("La frase no es un palindromo");
+		}
+
+	}
+
+	public static boolean isPalindromo(String frase) throws Exception {
+		QueueEnlazado cola = new QueueEnlazado();
+		frase = frase.replaceAll("\\s+", "");
+		frase = frase.toLowerCase();
+		frase = Normalizer.normalize(frase, Normalizer.Form.NFD);
+		frase = frase.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+		cola.encolar(frase);
+		frase = new StringBuilder(frase).reverse().toString();
+		cola.encolar(frase);
+		if (cola.desencolar().equals(cola.desencolar())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}

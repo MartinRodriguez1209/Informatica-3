@@ -1,0 +1,36 @@
+package ejercicio4;
+
+public class Nodo {
+	private String dato;
+	private Nodo next;
+
+	Nodo() {
+		next = null;
+	}
+
+	Nodo(String d) {
+		next = null;
+		dato = d;
+	}
+
+	Nodo(String d, Nodo n) {
+		next = n;
+		dato = d;
+	}
+
+	public String getDato() {
+		return dato;
+	}
+
+	public void setDato(String dato) {
+		this.dato = dato;
+	}
+
+	public Nodo getNext() {
+		return next;
+	}
+
+	public void setNext(Nodo next) {
+		this.next = next;
+	}
+}

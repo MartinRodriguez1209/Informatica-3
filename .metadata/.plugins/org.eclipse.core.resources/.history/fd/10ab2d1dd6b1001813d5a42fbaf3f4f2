@@ -1,0 +1,24 @@
+package ejercicio4;
+
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) throws Exception {
+		Scanner scan = new Scanner(System.in);
+		QueueEnlazado cola = new QueueEnlazado();
+		System.out.println("Ingrese una frase.");
+		String frase = scan.nextLine();
+		frase = frase.replaceAll("\\s+", "");
+		frase = frase.toLowerCase();
+		cola.encolar(frase);
+		frase = new StringBuilder(frase).reverse().toString();
+		cola.encolar(frase);
+		if (cola.desencolar() != cola.desencolar()) {
+			System.out.println("La frase es un palindromo");
+		}
+
+		System.out.println(frase);
+	}
+
+}

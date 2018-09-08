@@ -1,0 +1,32 @@
+package ejercicio2;
+
+import java.text.ParseException;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int control = 1;
+		String dato;
+		int numero;
+		Scanner scan = new Scanner(System.in);
+		StackArrInts pila = new StackArrInts(20);
+
+		System.out.println("Ingrese los numeros con los que desea operar(ingrese 0 para salir)");
+		do {
+			dato = scan.next();
+		
+			
+			try {
+				numero = Integer.parseInt(dato);
+				pila.push(numero);
+			} catch (ParseException e) {
+				System.out.println("ingreso una operacion");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} while (control == 0);
+	}
+
+}
